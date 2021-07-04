@@ -8,6 +8,79 @@
     <script src="figuras.js" defer></script>
   </head>
   <body>
-    <h1>Figuras Geométricas</h1>
+    <header>
+      <h1>Figuras geométricas</h1>
+      <p>Calculo de varias figuras geométricas</p>
+    </header>
+    <main>
+      <section id="cuadrados">
+        <h2>Calculo de cuadrados</h2>
+        <form>
+          <label for="lado-cuadrado">
+            <span>Ingresa el lado</span><br />
+            <input type="text" id="lado-cuadrado" /> </label
+          ><br />
+          <p id="resultado-cuadrado"></p>
+          <button type="button" onclick="calcularAreaCuadrado()">
+            Calcular Área
+          </button>
+          <br />
+          <button type="button" onclick="calcularPerimetroCuadrado()">
+            Calcular Perímetro
+          </button>
+        </form>
+      </section>
+      <section id="triangulos">
+        <h2>Calculo de tríangulos</h2>
+        <form>
+          <label for="lado1-triangulo">
+            <span>Ingresa el lado 1</span><br />
+            <input type="text" id="lado1-triangulo" />
+          </label>
+          <br />
+          <label for="lado2-triangulo">
+            <span>Ingresa el lado 2</span><br />
+            <input type="text" id="lado2-triangulo" />
+          </label>
+          <br />
+          <label for="base-triangulo">
+            <span>Ingresa la base</span><br />
+            <input type="text" id="base-triangulo" />
+          </label>
+          <br />
+          <label for="altura-triangulo">
+            <span>Ingresa la altura</span><br />
+            <input type="text" id="altura-triangulo" />
+          </label>
+          <br />
+          <p id="resultado-triangulo"></p>
+          <button type="button" onclick="calcularAreaTriangulo()">
+            Calcular Área
+          </button>
+          <br />
+          <button type="button" onclick="calcularPerimetroTriangulo()">
+            Calcular Perímetro
+          </button>
+        </form>
+      </section>
+      <section id="circulos">
+        <h2>Calculo de círculos</h2>
+        <form>
+          <label for="radio-circulo">
+            <span>Ingresa el radio</span><br />
+            <input type="text" id="radio-circulo" />
+          </label>
+          <br />
+          <p id="resultado-circulo"></p>
+          <button type="button" onclick="calcularAreaCirculo()">
+            Calcular Área
+          </button>
+          <br />
+          <button type="button" onclick="calcularPerimetroCirculo()">
+            Calcular Perímetro
+          </button>
+        </form>
+      </section>
+    </main>
   </body>
 </html>
