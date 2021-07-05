@@ -70,3 +70,20 @@ function calcularPerimetroCirculo() {
   const perimetro = perimetroCirculo(radio);
   resultadoCirculo.innerText = `El perímetro del circulo es ${perimetro}cm`;
 }
+
+// Reto 1
+
+function alturaTrianguloIsosceles(ladoA, ladoB, ladoC) {
+  try {
+    if (ladoA === ladoB && ladoA !== ladoC) {
+      return Math.sqrt(ladoA * ladoA - (ladoC * ladoC) / 4);
+    } else if (ladoB === ladoC && ladoB !== ladoA) {
+      return Math.sqrt(ladoB * ladoB - (ladoA * ladoA) / 4);
+    } else if (ladoA === ladoC && ladoA !== ladoB) {
+      return Math.sqrt(ladoA * ladoA - (ladoB * ladoB) / 4);
+    }
+    throw { message: 'Este no es un triángulo isósceles' };
+  } catch (error) {
+    console.log(error);
+  }
+}
