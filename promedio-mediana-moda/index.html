@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promedio, mediana, moda | Curso práctico JavaScript</title>
+    <script src="js/promedio.js" defer></script>
+  </head>
+  <body>
+    <section id="promedio">
+      <p>Coloca la lista de elementos en este formato: <b>1,2,3,4,5,6</b></p>
+      <form id="form-promedio">
+        <label for="valores-promedio">
+          <span>Valores</span>
+          <input
+            id="valores-promedio"
+            name="valores"
+            type="text"
+            placeholder="Valores para el promedio"
+          />
+        </label>
+        <input
+          id="calcular-promedio"
+          type="button"
+          value="Calcular el promedio"
+        />
+      </form>
+      <p id="resultado-promedio"></p>
+    </section>
+  </body>
+</html>
