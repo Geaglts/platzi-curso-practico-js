@@ -9,12 +9,16 @@ function calcularPromedio(valores) {
   return 0;
 }
 
-const calcularPromedioBtn = document.getElementById('calcular-promedio');
-calcularPromedioBtn.onclick = () => {
-  const htmlForm = document.getElementById('form-promedio');
+function generarValores(htmlId) {
+  const htmlForm = document.getElementById(htmlId);
   const form = new FormData(htmlForm);
   const valores = form.get('valores').trim().split(',');
+  return valores;
+}
 
+const calcularPromedioBtn = document.getElementById('calcular-promedio');
+calcularPromedioBtn.onclick = () => {
+  const valores = generarValores('form-promedio');
   // Resultado en HTML
   const resultadoP = document.getElementById('resultado-promedio');
   const promedio = calcularPromedio(valores);
