@@ -1,0 +1,28 @@
+const nombres = [
+  'Miguel',
+  'Juan',
+  'Pedro',
+  'Elisa',
+  'Juana',
+  'Erika',
+  'Jose',
+  'Victor',
+  'Alexis',
+  'Marcelino',
+  'Rafael',
+  'Eduardo',
+  'Diana',
+  'Reyna',
+];
+const apellidos = [
+  'Toledo',
+  'Santiago',
+  'Castilejos',
+  'Montero',
+  'Martinez',
+  'Lopez',
+  'Vazquez',
+  'Guerra',
+  'Obrador',
+  'Mendoza',
+];
