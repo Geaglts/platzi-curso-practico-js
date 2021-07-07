@@ -8,8 +8,10 @@
     <script src="js/promedio.js" defer></script>
   </head>
   <body>
-    <section id="promedio">
+    <section>
       <p>Coloca la lista de elementos en este formato: <b>1,2,3,4,5,6</b></p>
+    </section>
+    <section id="promedio">
       <form id="form-promedio">
         <label for="valores-promedio">
           <span>Valores</span>
@@ -29,7 +31,6 @@
       <p id="resultado-promedio"></p>
     </section>
     <section id="mediana">
-      <p>Coloca la lista de elementos en este formato: <b>1,2,3,4,5,6</b></p>
       <form id="form-mediana">
         <label for="valores-mediana">
           <span>Valores</span>
@@ -47,6 +48,21 @@
         />
       </form>
       <p id="resultado-mediana"></p>
+    </section>
+    <section id="moda">
+      <form id="form-moda">
+        <label for="valores-moda">
+          <span>Valores</span>
+          <input
+            id="valores-moda"
+            name="valores"
+            type="text"
+            placeholder="Valores para el moda"
+          />
+        </label>
+        <input id="calcular-moda" type="button" value="Calcular el moda" />
+      </form>
+      <p id="resultado-moda"></p>
     </section>
   </body>
 </html>
