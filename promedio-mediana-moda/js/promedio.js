@@ -25,17 +25,25 @@ function verificarParidad(valores, paridad) {
 }
 
 function calcularMediana(valores) {
-  const listaPar = verificarParidad(valores, 2);
+  const listaOrdenada = valores.sort((a, b) => (a > b ? 1 : -1));
+  const primerValor = listaOrdenada[Math.floor(listaOrdenada.length / 2) - 1];
+  if (primerValor % 2 === 0) {
+    const segundoValor = listaOrdenada[Math.floor(listaOrdenada.length / 2)];
+    return (primerValor + segundoValor) / 2;
+  } else {
+    return listaOrdenada[Math.floor(listaOrdenada.length / 2)];
+  }
+  /* const listaPar = verificarParidad(listaOrdenada, 2);
   if (listaPar) {
-    const primerValor = valores[Math.floor(valores.length / 2) - 1];
-    const segundoValor = valores[Math.floor(valores.length / 2)];
+    const primerValor = listaOrdenada[Math.floor(listaOrdenada.length / 2) - 1];
+    const segundoValor = listaOrdenada[Math.floor(listaOrdenada.length / 2)];
     return (primerValor + segundoValor) / 2;
   }
-  const listaImpar = verificarParidad(valores, 3);
+  const listaImpar = verificarParidad(listaOrdenada, 3);
   if (listaImpar) {
-    return valores[Math.floor(valores.length / 2)];
+    return listaOrdenada[Math.floor(listaOrdenada.length / 2)];
   }
-  return 0;
+  return 0; */
 }
 
 // Promedio
