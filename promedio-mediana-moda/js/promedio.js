@@ -26,24 +26,14 @@ function verificarParidad(valores, paridad) {
 
 function calcularMediana(valores) {
   const listaOrdenada = valores.sort((a, b) => (a > b ? 1 : -1));
-  const primerValor = listaOrdenada[Math.floor(listaOrdenada.length / 2) - 1];
-  if (primerValor % 2 === 0) {
-    const segundoValor = listaOrdenada[Math.floor(listaOrdenada.length / 2)];
-    return (primerValor + segundoValor) / 2;
+  const mitadDeLista = Math.floor(listaOrdenada.length / 2);
+  if (listaOrdenada.length % 2 === 0) {
+    const primerValor = listaOrdenada[mitadDeLista - 1];
+    const segundoValor = listaOrdenada[mitadDeLista];
+    return calcularPromedio([primerValor, segundoValor]);
   } else {
-    return listaOrdenada[Math.floor(listaOrdenada.length / 2)];
+    return listaOrdenada[mitadDeLista];
   }
-  /* const listaPar = verificarParidad(listaOrdenada, 2);
-  if (listaPar) {
-    const primerValor = listaOrdenada[Math.floor(listaOrdenada.length / 2) - 1];
-    const segundoValor = listaOrdenada[Math.floor(listaOrdenada.length / 2)];
-    return (primerValor + segundoValor) / 2;
-  }
-  const listaImpar = verificarParidad(listaOrdenada, 3);
-  if (listaImpar) {
-    return listaOrdenada[Math.floor(listaOrdenada.length / 2)];
-  }
-  return 0; */
 }
 
 // Promedio
