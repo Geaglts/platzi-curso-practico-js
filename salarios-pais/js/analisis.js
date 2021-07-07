@@ -1,3 +1,7 @@
+function calcularPorcentaje(cantidad, porcentaje) {
+  return (cantidad * (100 - porcentaje)) / 100;
+}
+
 function calcularPromedio(lista) {
   if (lista.length > 0) {
     const sumaDeValores = lista.reduce(
@@ -10,21 +14,28 @@ function calcularPromedio(lista) {
 }
 
 function calcularMediana(lista) {
-  const listaOrdenada = lista.sort((a, b) => (a > b ? 1 : -1));
-  const mitadDeLista = Math.floor(listaOrdenada.length / 2);
-  if (listaOrdenada.length % 2 === 0) {
-    const primerValor = listaOrdenada[mitadDeLista - 1];
-    const segundoValor = listaOrdenada[mitadDeLista];
+  const mitadDeLista = Math.floor(lista.length / 2);
+  if (lista.length % 2 === 0) {
+    const primerValor = lista[mitadDeLista - 1];
+    const segundoValor = lista[mitadDeLista];
     return calcularPromedio([primerValor, segundoValor]);
   } else {
-    return listaOrdenada[mitadDeLista];
+    return lista[mitadDeLista];
   }
 }
 
 function main() {
-  const datosDeMexico = generadorDePerdonasConSalarios(100, 15000);
+  const datosDeMexico = generadorDePerdonasConSalarios(1000, 20000);
   const salariosMex = datosDeMexico.map((p) => p.salary);
-  console.log(calcularMediana(salariosMex));
+  const salariosMexSort = salariosMex.sort((a, b) => (a > b ? 1 : -1));
+
+  // Salarios del Top 10%
+  const inicio = calcularPorcentaje(salariosMexSort.length, 10);
+  const fin = salariosMexSort.length - inicio;
+  const salariosTop10Mex = salariosMexSort.splice(inicio, fin);
+
+  console.log(calcularMediana(salariosMexSort));
+  console.log(calcularMediana(salariosTop10Mex));
 }
 
 main();
